@@ -4,7 +4,6 @@ import { supabase } from "@/utils/supabase/server";
 
 export async function POST(req) {
   const { email, password } = await req.json();
-  console.log({ email: email, password: password });
   const { data: users, error } = await supabase
     .from("user")
     .select("*")
