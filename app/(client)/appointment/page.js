@@ -2,16 +2,32 @@ import React from "react";
 
 const Appointment = () => {
   return (
-    <div className="bg-red-300 h-dvh p-20 px-60">
-      <div className="flex bg-blue-100 p-4">
-        <div className="border bg-yellow-50 w-full flex">
-          <div className="w-20 bg-green-200 flex flex-col items-center justify-center py-4">
-            <div className="font-bold">16</div>
-            <div className="font-bold">Oct</div>
-            <div className="">Senin</div>
+    <div className="bg-gray-100  h-dvh ">
+      <h1 className="font-bold text-3xl px-70 py-10">Pilih Jadwal</h1>
+      <div className="flex gap-4 flex-col overflow-y-auto h-4/5 no-scrollbar px-72 ">
+        {[...Array(7)].map((a, b) => (
+          <div
+            key={b}
+            className="relative flex border bg-white border-gray-400 p-4 rounded-md group hover:bg-slate-200 hover:border-slate-900"
+          >
+            <div className="rounded-tl-md rounded-bl-md absolute top-0 left-0 bottom-0 w-20 bg-slate-700 flex flex-col items-center justify-center py-4 text-gray-50">
+              <div className="font-bold">16</div>
+              <div className="font-bold">Oct</div>
+              <div className="">Senin</div>
+            </div>
+            <div className=" bg-gray-50 w-full flex group-hover:bg-slate-200 ml-20">
+              <div className="m-3 flex justify-between items-center w-full  bg-white group-hover:bg-slate-200">
+                <div>
+                  <h3 className="font-semibold">12:00 - 14:00</h3>
+                  <h2 className=""> dr. I Dewa Made Artika, Sp.P (K)</h2>
+                </div>
+                <button className="bg-red-500 rounded-full px-7 py-3 text-white cursor-pointer text">
+                  Pilih dan lanjutkan
+                </button>
+              </div>
+            </div>
           </div>
-          <div className="m-3"></div>
-        </div>
+        ))}
       </div>
     </div>
   );
