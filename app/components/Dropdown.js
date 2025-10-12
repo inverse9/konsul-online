@@ -18,7 +18,7 @@ const people = [
 ];
 
 const Dropdown = () => {
-  const [selected, setSelected] = useState(people[1]);
+  const [selected, setSelected] = useState(people[0]);
 
   return (
     <div className="h-screen flex items-center">
@@ -26,7 +26,7 @@ const Dropdown = () => {
       <Listbox value={selected} onChange={setSelected}>
         <ListboxButton
           className={clsx(
-            "relative block w-1/4 rounded-lg bg-slate-700 py-1.5 pr-8 pl-3 text-left text-sm/6 text-white",
+            "relative block max-w-2/6 min-w-1/4 rounded-lg bg-slate-700 py-1.5 pr-8 pl-3 text-left text-sm/6 text-white",
             "focus:not-data-focus:outline-none data-focus:outline-2 data-focus:-outline-offset-2 data-focus:outline-white/25"
           )}
         >

@@ -1,7 +1,19 @@
+"use client";
 import Dropdown from "@/app/components/Dropdown";
-import React from "react";
+import Modal from "@/app/components/Modal";
+import React, { useEffect, useState } from "react";
 
 const Appointment = () => {
+  const [isOpenForm, setIsOpenForm] = useState(false);
+  const [keluhan, setKeluhan] = useState("");
+  const [isSubmit, setisSubmit] = useState(false);
+
+  useEffect(() => {
+    console.log(keluhan);
+    setisSubmit(false);
+    setKeluhan("");
+  }, [isSubmit]);
+
   return (
     <div className="bg-gray-100 h-dvh">
       <h1 className="font-bold text-3xl px-70 py-10">Pilih Jadwal</h1>
@@ -11,7 +23,8 @@ const Appointment = () => {
         {[...Array(7)].map((a, b) => (
           <div
             key={b}
-            className="relative flex border bg-white border-gray-400 p-4 rounded-md group hover:bg-slate-200 hover:border-slate-500"
+            onClick={() => setIsOpenForm(true)}
+            className="relative flex border bg-white border-gray-400 p-4 rounded-md group hover:bg-slate-200 hover:border-slate-500 cursor-pointer"
           >
             <div className="rounded-tl-md rounded-bl-md absolute top-0 left-0 bottom-0 w-20 bg-slate-700 flex flex-col items-center justify-center py-4 text-gray-50">
               <div className="font-bold">16</div>
@@ -32,6 +45,13 @@ const Appointment = () => {
           </div>
         ))}
       </div>
+      <Modal
+        isOpen={isOpenForm}
+        setIsOpen={setIsOpenForm}
+        keluhan={keluhan}
+        setKeluhan={setKeluhan}
+        setisSubmit={setisSubmit}
+      />
     </div>
   );
 };
