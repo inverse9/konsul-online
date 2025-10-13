@@ -9,7 +9,6 @@ const Appointment = () => {
   const [isSubmit, setisSubmit] = useState(false);
 
   useEffect(() => {
-    console.log(keluhan);
     setisSubmit(false);
     setKeluhan("");
   }, [isSubmit]);
