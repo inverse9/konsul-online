@@ -3,10 +3,10 @@ import React, { useState } from "react";
 import Table from "./Table";
 import Modal from "./Modal";
 
-const page = () => {
+const Jadwal = () => {
   const [isOpenForm, setIsOpenForm] = useState(false);
   return (
-    <div className="p-4">
+    <div className="p-4 grow">
       <div>
         <Table setIsOpenForm={setIsOpenForm} />
       </div>
@@ -19,4 +19,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Jadwal;
