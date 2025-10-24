@@ -8,11 +8,13 @@ import {
 import React from "react";
 import clsx from "clsx";
 
-const Modal = ({ isOpen, setIsOpen, keluhan, setKeluhan, setisSubmit }) => {
+const ModalDesc = ({ isOpen, setIsOpen, desc, setDesc, setisSubmit }) => {
   const submitForm = () => {
+    // send email
     setisSubmit(true);
     setIsOpen(false);
   };
+
   return (
     <>
       <Dialog
@@ -32,26 +34,32 @@ const Modal = ({ isOpen, setIsOpen, keluhan, setKeluhan, setisSubmit }) => {
             >
               <DialogTitle
                 as="h3"
-                className="text-base/7 font-semibold slate-700"
+                className="text-xl font-semibold slate-700 text-center"
               >
-                Jelaskan kami keluhan Anda
+                Masukan Link Konsultasi
               </DialogTitle>
               <Textarea
-                value={keluhan}
-                onChange={(e) => setKeluhan(e.target.value)}
-                placeholder="Tulis keluhan Anda disini..."
+                value={desc}
+                onChange={(e) => setDesc(e.target.value)}
+                placeholder="Masukan Link Konsultasi disini..."
                 className={clsx(
                   "mt-3 block w-full resize-none rounded-lg border border-slate-300 bg-slate-100 px-3 py-1.5 text-sm/6 text-slate-700",
                   "focus:not-data-focus:outline-none data-focus:outline-1 data-focus:-outline-offset-1 data-focus:outline-slate-700"
                 )}
                 rows={3}
               />
-              <div className="mt-4 text-right">
+              <div className="mt-10 text-center">
                 <Button
-                  className="inline-flex items-center gap-2 rounded-md bg-purple-700 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:not-data-focus:outline-none data-focus:outline data-focus:outline-white data-hover:bg-purple-600 data-open:bg-purple-700"
+                  className="mr-4 inline-flex items-center gap-2 rounded-md border border-purple-700 px-3 py-1.5 text-sm/6 font-semibold text-purple-800 shadow-inner shadow-white/10 focus:not-data-focus:outline-none data-focus:outline data-focus:outline-white data-hover:bg-purple-100 data-open:bg-gray-700 cursor-pointer"
                   onClick={submitForm}
                 >
-                  Kirim dan Booking Konsultasi
+                  Kembali
+                </Button>
+                <Button
+                  className="inline-flex items-center gap-2 rounded-md bg-purple-700 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:not-data-focus:outline-none data-focus:outline data-focus:outline-white data-hover:bg-purple-600 data-open:bg-gray-700 cursor-pointer"
+                  onClick={submitForm}
+                >
+                  Submit
                 </Button>
               </div>
             </DialogPanel>
@@ -62,4 +70,4 @@ const Modal = ({ isOpen, setIsOpen, keluhan, setKeluhan, setisSubmit }) => {
   );
 };
 
-export default Modal;
+export default ModalDesc;

@@ -7,17 +7,17 @@ const Sidebar = () => {
   const pathname = usePathname();
   const linkClass = (path) =>
     pathname === path
-      ? "text-blue-600 font-bold px-3 py-2 cursor-pointer"
-      : "text-black  cursor-pointer";
+      ? "text-purple-600 font-bold px-3 py-2 cursor-pointer"
+      : "text-black cursor-pointer";
 
   return (
-    <div className="bg-white border-r border-slate-300 h-dvh w-56 py-8 flex flex-col items-center">
+    <div className="bg-purple-100 border-r-2 border-purple-200 h-dvh w-56 py-8 flex flex-col items-center">
       <div>
         <img className="size-42 rounded-full" src="/logo.jpg" alt="" />
         <div className="mt-8 flex flex-col gap-y-2 text-sm">
           <Link
             href="/jadwal"
-            className={`rounded-md hover:bg-slate-100 px-3 py-2 ${linkClass(
+            className={`rounded-md hover:bg-purple-500 hover:text-slate-100 px-3 py-2 ${linkClass(
               "/jadwal"
             )}`}
           >
@@ -25,7 +25,7 @@ const Sidebar = () => {
           </Link>
           <Link
             href="/atur-jadwal"
-            className={`rounded-md hover:bg-slate-100 px-3 py-2 ${linkClass(
+            className={`rounded-md hover:bg-purple-500 hover:text-slate-100 px-3 py-2 ${linkClass(
               "/atur-jadwal"
             )}`}
           >
@@ -33,7 +33,7 @@ const Sidebar = () => {
           </Link>
           <Link
             href="/jadwal-setting"
-            className={`rounded-md hover:bg-slate-100 px-3 py-2 ${linkClass(
+            className={`rounded-md hover:bg-purple-500 hover:text-slate-100 px-3 py-2 ${linkClass(
               "/jadwal-setting"
             )}`}
           >
@@ -41,7 +41,7 @@ const Sidebar = () => {
           </Link>
           <Link
             href="/atur-jadwal"
-            className={`rounded-md hover:bg-slate-100 px-3 py-2 ${linkClass(
+            className={`rounded-md hover:bg-purple-500 hover:text-slate-100 px-3 py-2 ${linkClass(
               "/jadwal-setting"
             )}`}
           >

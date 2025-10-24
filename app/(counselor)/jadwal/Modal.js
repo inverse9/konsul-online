@@ -8,10 +8,12 @@ import {
 import React from "react";
 import clsx from "clsx";
 
-const Modal = ({ isOpen, setIsOpen }) => {
+const Modal = ({ isOpen, setIsOpen, desc, setDesc, setisopendesc }) => {
   const submitForm = () => {
+    setisopendesc(true);
     setIsOpen(false);
   };
+
   return (
     <>
       <Dialog
@@ -31,20 +33,19 @@ const Modal = ({ isOpen, setIsOpen }) => {
             >
               <DialogTitle
                 as="h3"
-                className="text-base/7 font-semibold slate-700 text-center"
+                className="text-xl font-semibold slate-700 text-center"
               >
                 Terima konsultasi ini?
               </DialogTitle>
-
-              <div className="mt-4 text-right">
+              <div className="mt-10 text-center">
                 <Button
-                  className="mr-4 inline-flex items-center gap-2 rounded-md border border-gray-700 px-3 py-1.5 text-sm/6 font-semibold text-gray-800 shadow-inner shadow-white/10 focus:not-data-focus:outline-none data-focus:outline data-focus:outline-white data-hover:bg-gray-100 data-open:bg-gray-700"
+                  className="mr-4 inline-flex items-center gap-2 rounded-md border border-purple-700 px-3 py-1.5 text-sm/6 font-semibold text-purple-800 shadow-inner shadow-white/10 focus:not-data-focus:outline-none data-focus:outline data-focus:outline-white data-hover:bg-purple-100 data-open:bg-gray-700 cursor-pointer"
                   onClick={submitForm}
                 >
                   Tolak konsultasi
                 </Button>
                 <Button
-                  className="inline-flex items-center gap-2 rounded-md bg-gray-700 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:not-data-focus:outline-none data-focus:outline data-focus:outline-white data-hover:bg-gray-600 data-open:bg-gray-700"
+                  className="inline-flex items-center gap-2 rounded-md bg-purple-700 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:not-data-focus:outline-none data-focus:outline data-focus:outline-white data-hover:bg-purple-600 data-open:bg-gray-700 cursor-pointer"
                   onClick={submitForm}
                 >
                   Ya, terima

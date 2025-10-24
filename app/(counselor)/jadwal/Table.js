@@ -52,13 +52,13 @@ const Table = ({ setIsOpenForm }) => {
                       <button
                         type="button"
                         onClick={() => setIsOpenForm(true)}
-                        className="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 hover:underline focus:outline-hidden focus:text-blue-800 disabled:opacity-50 disabled:pointer-events-none cursor-pointer"
+                        className="inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-purple-600 hover:text-purple-800 hover:underline focus:outline-hidden focus:text-purple-800 disabled:opacity-50 disabled:pointer-events-none cursor-pointer"
                       >
                         Terima
                       </button>
                       <button
                         type="button"
-                        className="ml-2 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-blue-600 hover:text-blue-800 hover:underline focus:outline-hidden focus:text-blue-800 disabled:opacity-50 disabled:pointer-events-none cursor-pointer"
+                        className="ml-2 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-purple-600 hover:text-purple-800 hover:underline focus:outline-hidden focus:text-purple-800 disabled:opacity-50 disabled:pointer-events-none cursor-pointer"
                       >
                         Tolak
                       </button>
