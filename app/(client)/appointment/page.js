@@ -14,7 +14,7 @@ const Appointment = () => {
   }, [isSubmit]);
 
   return (
-    <div className="bg-purple-50 h-dvh">
+    <div className="bg-slate-100 h-dvh">
       <h1 className="font-bold text-3xl px-70 py-10">Pilih Jadwal</h1>
 
       <div className="flex gap-4 flex-col overflow-y-auto h-4/5 no-scrollbar px-72 ">

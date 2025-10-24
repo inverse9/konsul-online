@@ -11,7 +11,7 @@ const Sidebar = () => {
       : "text-black cursor-pointer";
 
   return (
-    <div className="bg-purple-100 border-r-2 border-purple-200 h-dvh w-56 py-8 flex flex-col items-center">
+    <div className="bg-purple-300/20 border-r-2 border-purple-200 h-dvh w-56 py-8 flex flex-col items-center">
       <div>
         <img className="size-42 rounded-full" src="/logo.jpg" alt="" />
         <div className="mt-8 flex flex-col gap-y-2 text-sm">
