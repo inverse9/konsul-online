@@ -42,3 +42,11 @@ body {
     scrollbar-width: none;
   }
 }
+
+.react-timerange-picker__inputGroup {
+  @apply !min-w-fit;
+}
+
+.react-timerange-picker__wrapper {
+  @apply border border-slate-300 rounded-md p-1;
+}

@@ -32,20 +32,12 @@ const Sidebar = () => {
             Atur Jadwal
           </Link>
           <Link
-            href="/jadwal-setting"
+            href="/riwayat-konsultasi"
             className={`rounded-md hover:bg-purple-500 hover:text-slate-100 px-3 py-2 ${linkClass(
               "/jadwal-setting"
             )}`}
           >
-            Atur Jadwal
-          </Link>
-          <Link
-            href="/atur-jadwal"
-            className={`rounded-md hover:bg-purple-500 hover:text-slate-100 px-3 py-2 ${linkClass(
-              "/jadwal-setting"
-            )}`}
-          >
-            Atur Jadwal
+            Riwayat Konsultasi
           </Link>
         </div>
       </div>

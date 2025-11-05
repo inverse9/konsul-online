@@ -3,6 +3,14 @@ import Dropdown from "@/app/components/Dropdown";
 import Modal from "@/app/components/Modal";
 import React, { useEffect, useState } from "react";
 
+const data = [
+  { id: 1, name: "dr. I Dewa Made Artika, Sp.P (K)" },
+  { id: 2, name: "Wade Cooper" },
+  { id: 3, name: "Tanya Fox" },
+  { id: 4, name: "Arlene Mccoy" },
+  { id: 5, name: "Devon Webb" },
+];
+
 const Appointment = () => {
   const [isOpenForm, setIsOpenForm] = useState(false);
   const [keluhan, setKeluhan] = useState("");
@@ -18,7 +26,10 @@ const Appointment = () => {
       <h1 className="font-bold text-3xl px-70 py-10">Pilih Jadwal</h1>
 
       <div className="flex gap-4 flex-col overflow-y-auto h-4/5 no-scrollbar px-72 ">
-        <Dropdown />
+        <div className="h-screen flex items-center">
+          <div className="w-32 font-semibold">Pilih Dokter :</div>
+          <Dropdown data={data} />
+        </div>
         {[...Array(7)].map((a, b) => (
           <div
             key={b}
