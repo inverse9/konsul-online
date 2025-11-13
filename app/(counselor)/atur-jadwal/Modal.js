@@ -17,11 +17,17 @@ const data = [
 ];
 
 const Modal = ({ isOpen, setIsOpen, desc, setDesc, setisopendesc }) => {
+  const [value, onChange] = useState(["10:00", "11:00"]);
+
+  const close = () => {
+    setIsOpen(false);
+  };
+
   const submitForm = () => {
     setisopendesc(true);
     setIsOpen(false);
   };
-  const [value, onChange] = useState(["10:00", "11:00"]);
+
   return (
     <>
       <Dialog
@@ -47,11 +53,11 @@ const Modal = ({ isOpen, setIsOpen, desc, setDesc, setisopendesc }) => {
               </DialogTitle>
               <div className="mt-10 ">
                 <div className="flex gap-2 items-center">
-                  <label htmlFor="">Hari</label>
+                  <label htmlFor="">Hari: </label>
                   <Dropdown data={data} />
                 </div>
                 <div className="flex gap-2 items-center mt-4">
-                  <label htmlFor="">Jam</label>
+                  <label htmlFor="">Jam: </label>
 
                   <TimeRangePicker
                     onChange={onChange}
@@ -62,18 +68,18 @@ const Modal = ({ isOpen, setIsOpen, desc, setDesc, setisopendesc }) => {
                     clearIcon={null}
                   />
                 </div>
-                <div className="mt-10">
+                <div className="mt-10 text-right">
                   <Button
                     className="mr-4 inline-flex items-center gap-2 rounded-md border border-purple-700 px-3 py-1.5 text-sm/6 font-semibold text-purple-800 shadow-inner shadow-white/10 focus:not-data-focus:outline-none data-focus:outline data-focus:outline-white data-hover:bg-purple-100 data-open:bg-gray-700 cursor-pointer"
-                    onClick={submitForm}
+                    onClick={close}
                   >
-                    Tolak konsultasi
+                    Cancel
                   </Button>
                   <Button
                     className="inline-flex items-center gap-2 rounded-md bg-purple-700 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:not-data-focus:outline-none data-focus:outline data-focus:outline-white data-hover:bg-purple-600 data-open:bg-gray-700 cursor-pointer"
                     onClick={submitForm}
                   >
-                    Ya, terima
+                    Submit
                   </Button>
                 </div>
               </div>
