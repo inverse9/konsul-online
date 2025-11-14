@@ -39,6 +39,14 @@ const Sidebar = () => {
           >
             Riwayat Konsultasi
           </Link>
+          <Link
+            href="/login"
+            className={`rounded-md hover:bg-purple-500 hover:text-slate-100 px-3 py-2 ${linkClass(
+              "/riwayat-konsultasi"
+            )}`}
+          >
+            Logout
+          </Link>
         </div>
       </div>
     </div>
