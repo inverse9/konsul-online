@@ -22,10 +22,10 @@ const Appointment = () => {
   }, [isSubmit]);
 
   return (
-    <div className="bg-slate-100 h-dvh">
-      <h1 className="font-bold text-3xl px-70 py-10">Pilih Jadwal</h1>
+    <div className="bg-slate-100 h-dvh grow">
+      <h1 className="font-bold text-3xl px-50 py-10">Pilih Jadwal</h1>
 
-      <div className="flex gap-4 flex-col overflow-y-auto h-4/5 no-scrollbar px-72 ">
+      <div className="flex gap-4 flex-col overflow-y-auto h-4/5 no-scrollbar px-50 ">
         <div className="h-screen flex items-center">
           <div className="w-32 font-semibold">Pilih Dokter :</div>
           <Dropdown data={data} />
