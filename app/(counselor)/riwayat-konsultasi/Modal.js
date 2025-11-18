@@ -14,7 +14,9 @@ const Modal = ({ isOpen, setIsOpen, desc, setDesc, setisSubmit }) => {
     setisSubmit(true);
     setIsOpen(false);
   };
-
+  const close = () => {
+    setIsOpen(false);
+  };
   return (
     <>
       <Dialog

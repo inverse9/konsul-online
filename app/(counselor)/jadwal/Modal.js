@@ -13,7 +13,9 @@ const Modal = ({ isOpen, setIsOpen, desc, setDesc, setisopendesc }) => {
     setisopendesc(true);
     setIsOpen(false);
   };
-
+  const close = () => {
+    setIsOpen(false);
+  };
   return (
     <>
       <Dialog

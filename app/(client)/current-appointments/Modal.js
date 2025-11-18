@@ -21,7 +21,6 @@ const Modal = ({ isOpen, setIsOpen, desc, setDesc, setisSubmit }) => {
         open={isOpen}
         as="div"
         className="relative z-10 focus:outline-none"
-        onClose={close}
       >
         <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
           <div
