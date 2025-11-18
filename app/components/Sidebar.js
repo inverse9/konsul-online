@@ -22,12 +22,12 @@ const Sidebar = () => {
     } else {
       return [
         {
-          title: "Buat Perjanjian",
-          href: "/appointment",
-        },
-        {
           title: "Perjanjian Saya",
           href: "/current-appointments",
+        },
+        {
+          title: "Buat Perjanjian",
+          href: "/appointment",
         },
         {
           title: "Logout",
