@@ -5,7 +5,7 @@ const nextConfig = {
       {
         source: "/",
         destination: "/login",
-        permanent: true, // Use true (308 redirect) if this is permanent
+        permanent: true,
       },
     ];
   },

@@ -21,7 +21,7 @@ const Login = () => {
 
   return (
     <div className="flex h-dvh">
-      <div className="bg-purple-500 w-2/5"></div>
+      <div className="bg-purple-500  lg:w-2/5"></div>
       <div className="bg-white grow flex flex-col h-full">
         <div className="flex flex-col justify-center items-center h-full">
           <h1 className="text-4xl font-bold text-center text-purple-500 mb-2">

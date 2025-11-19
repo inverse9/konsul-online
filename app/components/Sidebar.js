@@ -46,9 +46,15 @@ const Sidebar = () => {
   }, []);
 
   return (
-    <div className="bg-purple-300/20 border-r-2 border-purple-200 h-dvh w-56 py-8 flex flex-col items-center">
+    <div className="bg-purple-300/20 border-r-2 border-purple-200 h-dvh w-56 hidden py-8 md:flex flex-col items-center">
       <div>
-        <img className="size-42 rounded-full" src="/logo.jpg" alt="" />
+        <div className="flex items-center justify-center">
+          <img
+            className="size-20 lg:size-42 rounded-full"
+            src="/logo.jpg"
+            alt=""
+          />
+        </div>
         <div className="mt-8 flex flex-col gap-y-2 text-sm">
           {menu().map((item, index) => (
             <Link
