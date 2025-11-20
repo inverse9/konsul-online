@@ -25,7 +25,7 @@ const Appointment = () => {
     <div className="bg-slate-100 h-dvh grow">
       <h1 className="font-bold text-3xl px-50 py-10">Pilih Jadwal</h1>
 
-      <div className="flex gap-4 flex-col overflow-y-auto h-4/5 no-scrollbar px-50 ">
+      <div className="flex gap-4 flex-col overflow-y-auto h-4/5 no-scrollbar px-20 ">
         <div className="h-screen flex items-center">
           <div className="w-32 font-semibold">Pilih Dokter :</div>
           <Dropdown data={data} />
@@ -34,7 +34,7 @@ const Appointment = () => {
           <div
             key={b}
             onClick={() => setIsOpenForm(true)}
-            className="relative flex border bg-white border-gray-400 p-4 rounded-md group hover:bg-purple-100 hover:border-slate-500 cursor-pointer"
+            className="relative flex border bg-white border-gray-400 p-4 rounded-md group hover:bg-purple-100 hover:border-slate-500 cursor-pointer shadow"
           >
             <div className="rounded-tl-md rounded-bl-md absolute top-0 left-0 bottom-0 w-20 bg-slate-700 flex flex-col items-center justify-center py-4 text-gray-50">
               <div className="font-bold">16</div>

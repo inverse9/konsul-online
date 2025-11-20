@@ -14,7 +14,6 @@ const CurrentAppoinment = () => {
     <div className="p-4 grow">
       <div>
         <h1 className="font-semibold text-lg mb-4">Konsultasi Saya</h1>
-
         <Table />
       </div>
     </div>

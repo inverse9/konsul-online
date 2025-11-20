@@ -10,6 +10,28 @@ const Login = () => {
     password: "",
   });
 
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   setLoading(true);
+  //   setMessage("");
+
+  //   const res = await fetch("/api/auth", {
+  //     method: "POST",
+  //     headers: { "Content-Type": "application/json" },
+  //     body: JSON.stringify(form),
+  //   });
+
+  //   const result = await res.json();
+  //   setLoading(false);
+
+  //   if (res.ok) {
+  //     setMessage("Berhasil daftar! silakan kembali ke login");
+  //     setForm({ nim: "", telp: "", email: "", password: "" });
+  //   } else {
+  //     setMessage(`Gagal: ${result.error}`);
+  //   }
+  // };
+
   const submitForm = (e) => {
     e.preventDefault();
     if (credentials.email === "konselor")
@@ -21,7 +43,9 @@ const Login = () => {
 
   return (
     <div className="flex h-dvh">
-      <div className="bg-purple-500  lg:w-2/5"></div>
+      <div className="bg-purple-500 flex items-center justify-center lg:w-2/5">
+        <img src="/logo.png" className="size-72" alt="" />
+      </div>
       <div className="bg-white grow flex flex-col h-full">
         <div className="flex flex-col justify-center items-center h-full">
           <h1 className="text-4xl font-bold text-center text-purple-500 mb-2">
@@ -43,7 +67,7 @@ const Login = () => {
                 onChange={(e) =>
                   setcredentials({ ...credentials, email: e.target.value })
                 }
-                className="px-2 py-1 mb-4 rounded-md border"
+                className="my-4 px-3 focus:ring-2 focus:ring-transparent focus:outline-none focus:border-purple-700 py-2 rounded-full border"
               />
               <input
                 type="text"
@@ -52,13 +76,13 @@ const Login = () => {
                 onChange={(e) =>
                   setcredentials({ ...credentials, password: e.target.value })
                 }
-                className="px-2 py-1 rounded-md border"
+                className="px-3 focus:ring-2 focus:ring-transparent focus:outline-none focus:border-purple-700 py-2 rounded-full border"
               />
             </div>
             <div className=" w-1/2 px-4">
               <Button
                 type="submit"
-                className="cursor-pointer inline-flex items-center gap-2 rounded-md bg-purple-700 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:not-data-focus:outline-none data-focus:outline data-focus:outline-white data-hover:bg-purple-600 data-open:bg-purple-700"
+                className="cursor-pointer inline-flex items-center gap-2 rounded-full bg-purple-700 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:not-data-focus:outline-none data-focus:outline data-focus:outline-white data-hover:bg-purple-600 data-open:bg-purple-700 w-full justify-center"
               >
                 Login
               </Button>
