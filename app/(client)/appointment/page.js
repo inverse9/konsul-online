@@ -24,7 +24,6 @@ const Appointment = () => {
   return (
     <div className="bg-slate-100 h-dvh grow">
       <h1 className="font-bold text-3xl py-10 px-4 lg:px-20">Pilih Jadwal</h1>
-
       <div className="flex gap-4 flex-col overflow-y-auto h-4/5 no-scrollbar px-4 lg:px-20 ">
         <div className="h-screen flex items-center">
           <div className="w-32 font-semibold">Pilih Dokter :</div>
