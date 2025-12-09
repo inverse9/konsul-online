@@ -43,8 +43,8 @@ const Login = () => {
 
   return (
     <div className="flex h-dvh">
-      <div className="hidden bg-purple-500 md:flex items-center justify-center lg:w-2/5">
-        <img src="/logo.png" className="size-72" alt="" />
+      <div className="hidden bg-purple-500 sm:flex items-center justify-center sm:w-1/3 lg:w-2/5">
+        <img src="/logo.png" className="size-52 lg:size-72" alt="" />
       </div>
       <div className="bg-white grow flex flex-col h-full">
         <div className="flex flex-col justify-center items-center h-full">
@@ -58,7 +58,7 @@ const Login = () => {
             onSubmit={submitForm}
             className="w-full flex flex-col items-center"
           >
-            <div className="mt-4 p-4 flex flex-col w-full md:w-1/2">
+            <div className="mt-4 p-4 flex flex-col w-full lg:w-2/3">
               Silakan masuk ke akun Anda
               <input
                 type="text"
@@ -79,7 +79,7 @@ const Login = () => {
                 className="px-3 focus:ring-2 focus:ring-transparent focus:outline-none focus:border-purple-700 py-2 rounded-full border"
               />
             </div>
-            <div className="w-full md:w-1/2 px-4">
+            <div className="w-full lg:w-2/3 px-4">
               <Button
                 type="submit"
                 className="cursor-pointer inline-flex items-center gap-2 rounded-full bg-purple-700 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:not-data-focus:outline-none data-focus:outline data-focus:outline-white data-hover:bg-purple-600 data-open:bg-purple-700 w-full justify-center"
