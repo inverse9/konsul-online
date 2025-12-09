@@ -1,49 +1,73 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 function Navbar() {
   const pathname = usePathname();
+  const [level, setlevel] = useState("");
+
+  const menu = () => {
+    if (level === "konselor") {
+      return [
+        { title: "Home", href: "/jadwal" },
+        { title: "Atur Jadwal", href: "/atur-jadwal" },
+        { title: "Riwayat Konsultasi", href: "/riwayat-konsultasi" },
+        { title: "Logout", href: "/login" },
+      ];
+    } else {
+      return [
+        {
+          title: "Perjanjian Saya",
+          href: "/current-appointments",
+        },
+        {
+          title: "Buat Perjanjian",
+          href: "/appointment",
+        },
+        {
+          title: "Logout",
+          href: "/login",
+        },
+      ];
+    }
+  };
+
+  useEffect(() => {
+    if (pathname === "/jadwal") {
+      setlevel("konselor");
+    } else {
+      setlevel("client");
+    }
+  }, []);
 
   const linkClass = (path) =>
     pathname === path
-      ? "text-white cursor-pointer"
-      : "text-black hover:text-white cursor-pointer";
+      ? "text-purple-600 font-bold px-3 py-2 cursor-pointer"
+      : "text-black cursor-pointer";
   return (
-    <div>
-      <div className="h-20 w-full bg-linear-to-r from-[#D78C00] to-[#F1BB6A] flex items-center justify-between gap-4 lg:gap-10 px-4">
+    <div className="md:hidden">
+      <div className="h-16 p-2 w-full bg-linear-to-r bg-purple-300 flex items-center justify-between gap-4 lg:gap-10 px-4">
         <div className="flex shrink-0 gap-2 items-center">
-          <img className="size-16" src="/undiknas.png" alt="" />
-          <div className="flex-col hidden md:flex">
-            <span>UNIVERSITAS PENDIDIKAN NASIONAL</span>{" "}
-            <span>UNDIKNAS UNIVERSITY</span>
-          </div>
+          <img
+            className="size-12 lg:size-42 rounded-full"
+            src="/logo.png"
+            alt=""
+          />{" "}
         </div>
         <div className="capitalize flex-1 flex items-center text-xs lg:text-base gap-2 lg:gap-10 justify-center font-semibold">
-          <Link href="/home" className={linkClass("/home")}>
-            Home
-          </Link>
-          <Link href="/comvis" className={linkClass("/comvis")}>
-            company visit
-          </Link>
-          <Link href="/produk" className={linkClass("/produk")}>
-            produk lokal
-          </Link>
-          <Link href="/informasi" className={linkClass("/informasi")}>
-            informasi
-          </Link>
-          <Link href="/pendaftaran" className={linkClass("/pendaftaran")}>
-            pendaftaran
-          </Link>
+          {menu().map((item, index) => (
+            <Link
+              key={index}
+              href={item.href}
+              className={`rounded-md hover:bg-purple-500 hover:text-slate-100 px-3 py-2 ${linkClass(
+                item.href
+              )}`}
+            >
+              {item.title}
+            </Link>
+          ))}
         </div>
-        {/* <Link href="/profile" className={"hidden lg:block size-10"}>
-          <img
-            className="size-full rounded-full"
-            src="/userpande.jpeg"
-            alt=""
-          />
-        </Link> */}
       </div>
     </div>
   );

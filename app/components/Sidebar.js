@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 const Sidebar = () => {
   const [level, setlevel] = useState("");
   const pathname = usePathname();
+
   const linkClass = (path) =>
     pathname === path
       ? "text-purple-600 font-bold px-3 py-2 cursor-pointer"
@@ -46,12 +47,12 @@ const Sidebar = () => {
   }, []);
 
   return (
-    <div className="bg-purple-300/20 border-r-2 border-purple-200 h-dvh w-56 hidden py-8 md:flex flex-col items-center">
+    <div className="bg-purple-300/20 border-r-2 border-purple-200 h-dvh hidden py-8 md:flex flex-col items-center shrink-0 w-40 lg:w-48">
       <div>
         <div className="flex items-center justify-center">
           <img
-            className="size-20 lg:size-42 rounded-full"
-            src="/logo.jpg"
+            className="size-20 lg:size-28 rounded-full"
+            src="/logo.png"
             alt=""
           />
         </div>

@@ -8,12 +8,12 @@ import {
 import React from "react";
 import clsx from "clsx";
 
-const Modal = ({ isOpen, setIsOpen, desc, setDesc, setisSubmit }) => {
+const Modal = ({ isOpen, setIsOpen, saran, setSaran, setisSubmit }) => {
   const submitForm = () => {
-    // send email
     setisSubmit(true);
     setIsOpen(false);
   };
+
   const close = () => {
     setIsOpen(false);
   };
@@ -38,12 +38,12 @@ const Modal = ({ isOpen, setIsOpen, desc, setDesc, setisSubmit }) => {
                 as="h3"
                 className="text-xl font-semibold slate-700 text-center"
               >
-                Masukan Link Konsultasi
+                Masukan saran/kesimpulan konsultasi
               </DialogTitle>
               <Textarea
-                value={desc}
-                onChange={(e) => setDesc(e.target.value)}
-                placeholder="Masukan Link Konsultasi disini..."
+                value={saran}
+                onChange={(e) => setSaran(e.target.value)}
+                placeholder="Masukan saran/kesimpulan disini..."
                 className={clsx(
                   "mt-3 block w-full resize-none rounded-lg border border-slate-300 bg-slate-100 px-3 py-1.5 text-sm/6 text-slate-700",
                   "focus:not-data-focus:outline-none data-focus:outline-1 data-focus:-outline-offset-1 data-focus:outline-slate-700"
