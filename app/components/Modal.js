@@ -8,12 +8,7 @@ import {
 import React from "react";
 import clsx from "clsx";
 
-const Modal = ({ isOpen, setIsOpen, keluhan, setKeluhan, setisSubmit }) => {
-  const submitForm = () => {
-    setisSubmit(true);
-    setIsOpen(false);
-  };
-
+const Modal = ({ isOpen, setIsOpen, keluhan, setKeluhan, submitForm }) => {
   const close = () => {
     setIsOpen(false);
   };

@@ -1,7 +1,7 @@
 import { Resend } from "resend";
 import { NextResponse } from "next/server";
 
-const resend = new Resend("re_Wn5UnxjM_H9agawtxJ84gtqV8imTuAEHX");
+const resend = new Resend("re_fnyBeE21_BpatJoUyrQhvptwqiasEVvae");
 
 export async function POST(request) {
   try {

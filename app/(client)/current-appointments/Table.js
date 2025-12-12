@@ -1,6 +1,6 @@
 import React from "react";
 
-const Table = () => {
+const Table = ({ data }) => {
   return (
     <div>
       <div className="flex flex-col bg-white p-4 rounded-lg shadow-md">
@@ -43,44 +43,27 @@ const Table = () => {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-200">
-                  <tr>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">
-                      Md. Bayu Praditya Larahati M.Psi, Psikolog
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">
-                      Senin
-                      <br />
-                      12:00 - 14:00
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">
-                      pusing tidak bisa tidur
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                      olahraga yang rutin
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                      Selesai
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">
-                      Dewi Ratih Tresna, M.Psi
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">
-                      Senin
-                      <br />
-                      12:00 - 14:00
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">
-                      Sakit kepala sebelah
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                      -
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                      Pending
-                    </td>
-                  </tr>
+                  {data.map((a, b) => (
+                    <tr key={a.id}>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">
+                        {a.counselor.name}{" "}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">
+                        {a.schedule_day.day}
+                        <br />
+                        {a.schedule_time.start} - {a.schedule_time.end}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">
+                        {a.description}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                        {a.conclusion ? a.conclusion : "-"}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                        {a.status == 1 ? "Selesai" : "Menunggu"}
+                      </td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>

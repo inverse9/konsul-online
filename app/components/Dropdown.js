@@ -9,9 +9,7 @@ import { CheckIcon, ChevronDownIcon } from "@heroicons/react/16/solid";
 import React, { useState } from "react";
 import clsx from "clsx";
 
-const Dropdown = ({ data }) => {
-  const [selected, setSelected] = useState(data[0]);
-
+const Dropdown = ({ data, selected, setSelected }) => {
   return (
     <Listbox value={selected} onChange={setSelected}>
       <ListboxButton

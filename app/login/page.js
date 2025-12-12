@@ -9,36 +9,34 @@ const Login = () => {
     email: "",
     password: "",
   });
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState("");
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   setLoading(true);
-  //   setMessage("");
-
-  //   const res = await fetch("/api/auth", {
-  //     method: "POST",
-  //     headers: { "Content-Type": "application/json" },
-  //     body: JSON.stringify(form),
-  //   });
-
-  //   const result = await res.json();
-  //   setLoading(false);
-
-  //   if (res.ok) {
-  //     setMessage("Berhasil daftar! silakan kembali ke login");
-  //     setForm({ nim: "", telp: "", email: "", password: "" });
-  //   } else {
-  //     setMessage(`Gagal: ${result.error}`);
-  //   }
-  // };
-
-  const submitForm = (e) => {
+  const submitForm = async (e) => {
     e.preventDefault();
-    if (credentials.email === "konselor")
-      redirect("/jadwal", RedirectType.replace);
-    else {
-      redirect("/current-appointments", RedirectType.replace);
+    setLoading(true);
+    setMessage("");
+
+    const res = await fetch("/api/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(credentials),
+    });
+
+    const result = await res.json();
+    if (res.ok) {
+      localStorage.setItem("user", JSON.stringify(result.user));
+      if (result.user.level === "konselor") {
+        redirect("/jadwal", RedirectType.replace);
+      } else {
+        redirect("/current-appointments", RedirectType.replace);
+      }
+    } else {
+      alert("Login failed: " + result.error);
     }
+    setLoading(false);
+
+    setMessage(result.message || result.error);
   };
 
   return (
@@ -70,7 +68,7 @@ const Login = () => {
                 className="my-4 px-3 focus:ring-2 focus:ring-transparent focus:outline-none focus:border-purple-700 py-2 rounded-full border"
               />
               <input
-                type="text"
+                type="password"
                 placeholder="Password"
                 value={credentials.password}
                 onChange={(e) =>
