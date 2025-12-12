@@ -73,6 +73,13 @@ const Appointment = () => {
   }, [isSubmit]);
 
   useEffect(() => {
+    setForm({
+      ...form,
+      message: `Halo Dr. ${selected.name}, <br/><br/> Saya ${user.name} ingin mengajukan konsultasi dengan keluhan sebagai berikut: <br/><br/> ${keluhan} <br/><br/> Mohon informasikan jadwal konsultasi yang tersedia. Terima kasih.`,
+    });
+  }, [keluhan]);
+
+  useEffect(() => {
     getDokter();
   }, []);
 
@@ -110,7 +117,6 @@ const Appointment = () => {
                   name: user.name,
                   email: "megex41388@lawior.com",
                   title: "Konsultasi",
-                  message: `Halo Dr. ${selected.name}, <br/><br/> Saya ${user.name} ingin mengajukan konsultasi dengan keluhan sebagai berikut: <br/><br/> ${keluhan} <br/><br/> Mohon informasikan jadwal konsultasi yang tersedia. Terima kasih.`,
                 });
               }}
               className="relative flex border bg-white border-gray-400 p-2 sm:p-4 rounded-md group hover:bg-purple-100 hover:border-slate-500 cursor-pointer shadow"
