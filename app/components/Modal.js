@@ -38,7 +38,7 @@ const Modal = ({ isOpen, setIsOpen, keluhan, setKeluhan, submitForm }) => {
               <Textarea
                 value={keluhan}
                 onChange={(e) => setKeluhan(e.target.value)}
-                placeholder="Tulis keluhan Anda disini..."
+                placeholder="Tulis keluhan Anda disini.."
                 className={clsx(
                   "mt-3 block w-full resize-none rounded-lg border border-slate-300 bg-slate-100 px-3 py-1.5 text-sm/6 text-slate-700",
                   "focus:not-data-focus:outline-none data-focus:outline-1 data-focus:-outline-offset-1 data-focus:outline-slate-700"
