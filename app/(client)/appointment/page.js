@@ -32,7 +32,13 @@ const Appointment = () => {
     title: "",
     message: "",
   });
-
+  const [consultations, setconsultations] = useState({
+    counselor_id: "",
+    patient_id: "",
+    description: "",
+    day_id: "",
+    time_id: "",
+  });
   const submitForm = () => {
     setisSubmit(true);
     submitEmail();
@@ -48,12 +54,21 @@ const Appointment = () => {
 
     const result = await res.json();
     if (res.ok) {
+      submitConsult();
       alert(
         "Permohonan anda telah terkirim, silakan pantau email anda untuk step selanjutnya"
       );
     } else {
       alert("Error sending email");
     }
+  };
+
+  const submitConsult = async () => {
+    const res = await fetch(`/api/consultations`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(consultations),
+    });
   };
 
   const getDokter = async () => {
@@ -76,6 +91,13 @@ const Appointment = () => {
     setForm({
       ...form,
       message: `Halo Dr. ${selected.name}, <br/><br/> Saya ${user.name} ingin mengajukan konsultasi dengan keluhan sebagai berikut: <br/><br/> ${keluhan} <br/><br/> Mohon informasikan jadwal konsultasi yang tersedia. Terima kasih.`,
+    });
+    setconsultations({
+      counselor_id: 3,
+      patient_id: user.id,
+      description: keluhan,
+      day_id: 1,
+      time_id: 1,
     });
   }, [keluhan]);
 
