@@ -18,6 +18,7 @@ const Appointment = () => {
   const [keluhan, setKeluhan] = useState("");
   const [isSubmit, setisSubmit] = useState(false);
   const [dokter, setdokter] = useState([]);
+  const [user, setUser] = useState([]);
   const [selected, setSelected] = useState({
     id: 3,
     created_at: "2025-10-03T03:32:10.766368+00:00",
