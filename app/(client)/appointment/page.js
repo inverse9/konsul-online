@@ -11,8 +11,7 @@ const slots = [
   "16:00 - 18:00",
   "19:00 - 21:00",
 ];
-const userString = localStorage.getItem("user");
-const user = JSON.parse(userString);
+
 const Appointment = () => {
   const [isOpenForm, setIsOpenForm] = useState(false);
   const [idDokter, setIdDokter] = useState(3);
@@ -103,6 +102,10 @@ const Appointment = () => {
 
   useEffect(() => {
     getDokter();
+    const userString = localStorage.getItem("user");
+    if (userString) {
+      setUser(JSON.parse(userString));
+    }
   }, []);
 
   useEffect(() => {
