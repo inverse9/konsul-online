@@ -3,6 +3,7 @@
 import { Button } from "@headlessui/react";
 import React, { useState } from "react";
 import { redirect, RedirectType } from "next/navigation";
+import Link from "next/link";
 
 const Login = () => {
   const [credentials, setcredentials] = useState({
@@ -85,6 +86,12 @@ const Login = () => {
                 Submit
               </Button>
             </div>
+            <Link
+              href="/register"
+              className={`text-purple-500 hover:text-purple-600 text-sm mt-4`}
+            >
+              Belum punya akun? Daftar di sini
+            </Link>
           </form>
         </div>
       </div>
